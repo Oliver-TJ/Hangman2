@@ -24,6 +24,11 @@ namespace HangmanApp1
             // returning the function
             LetterFunction lf = new LetterFunction();
             Array Done = lf.WordFinder();
+            
+            // prints the array
+            // similar to         for i in range(x,y):
+            //                        print(array[i])
+            
             foreach(var item in Done)
             {
                 Console.WriteLine(item.ToString());
