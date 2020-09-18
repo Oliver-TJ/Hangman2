@@ -8,7 +8,7 @@ namespace HangmanApp1
         // defining the function
         public Array WordFinder()
         {
-            string[] end = new string[] {"D","o","n","e"};
+            string[] end = new string[] {"Done"};
             return end;
         }
     }
@@ -35,7 +35,4 @@ namespace HangmanApp1
             }
         }
     }
-
-    
-
 } 
