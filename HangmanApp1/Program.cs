@@ -1,7 +1,15 @@
 ﻿using System;
 
-namespace DefaultNamespace
+namespace HangmanApp1
 {
+    class LetterFunction
+    {
+        public string WordFinder()
+        {
+            Console.WriteLine("Done");
+            return "Done";
+        }
+    }
     public class Hangman
     {
         public static void Main(string[] args)
@@ -9,17 +17,12 @@ namespace DefaultNamespace
             // Ben - enter the words and allow user to choose
             // Ollie - function that loops through the word to see where letters are
             // Main while loop
-            Console.WriteLine(new LetterFunction());
+            LetterFunction n = new LetterFunction();
+            string Done = n.WordFinder();
+            Console.WriteLine(Done);
         }
     }
 
-    class LetterFunction
-    {
-        public string WordFinder(string word)
-        {
-            string result = "Done";
-            return result;
-        }
-    }
+    
 
 } 
