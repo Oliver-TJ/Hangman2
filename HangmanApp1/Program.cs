@@ -16,9 +16,9 @@ namespace HangmanApp1
     {
         public static void Main(string[] args)
         {
-            // Ben - enter the words and allow user to choose
-            // Ollie - function that loops through the word to see where letters are
-            // Main while loop
+            // Ben           - enter the words and allow user to choose
+            // Ollie TJ      - function that loops through the word to see where letters are
+            // Ollie Blom    - Main while loop
             
             
             // returning the function
