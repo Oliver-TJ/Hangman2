@@ -6,9 +6,10 @@ namespace HangmanApp1
     class LetterFunction
     {
         // defining the function
-        public string WordFinder()
+        public Array WordFinder()
         {
-            return "Done";
+            string[] end = new string[] {"D","o","n","e"};
+            return end;
         }
     }
     public class Hangman
@@ -21,8 +22,8 @@ namespace HangmanApp1
             
             
             // returning the function
-            LetterFunction n = new LetterFunction();
-            string Done = n.WordFinder();
+            LetterFunction lf = new LetterFunction();
+            Array Done = lf.WordFinder();
             Console.WriteLine(Done);
         }
     }
