@@ -6,7 +6,6 @@ namespace HangmanApp1
     {
         public string WordFinder()
         {
-            Console.WriteLine("Done");
             return "Done";
         }
     }
