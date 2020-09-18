@@ -8,8 +8,21 @@ namespace HangmanApp1
         // defining the function
         public Array WordFinder()
         {
-            string[] end = new string[] {"Done"};
-            return end;
+            for (int j = 0; j < mysteryWord.Length; j++)
+            {
+                if (playerGuess == mysteryWord[j])
+                    guess[j] = playerGuess;
+                return null;
+            }
+        }
+
+        public Array WordCreator()
+        {
+            // input
+            Console.WriteLine("Enter the word you want to guess");
+            string EnterWord = Console.ReadLine();
+            string[] LetterList = new string[EnterWord.Length];
+
         }
     }
     public class Hangman
