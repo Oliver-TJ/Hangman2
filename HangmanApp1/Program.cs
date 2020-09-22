@@ -22,8 +22,8 @@ namespace HangmanApp1
             // Ben           - enter the words and allow user to choose
             // Ollie TJ      - function that loops through the word to see where letters are
             // Ollie Blom    - Main while loop
-            string letterChoice = "g";
-            string wordActual = "Begin";
+            string letterChoice = "n";
+            string wordActual = "Beginning";
             int ret;
             ret = Contains(letterChoice, wordActual);
             if (ret != -1)
