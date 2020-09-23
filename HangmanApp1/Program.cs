@@ -6,15 +6,41 @@ namespace HangmanApp1
 {
     public static class Hangman
     {
-        public static Array WordCreator()
+        static void enteringWord() // Ben's part
         {
-            // input
-            Console.WriteLine("Enter the word you want to guess");
-            string EnterWord = Console.ReadLine();
-            string[] LetterList = new string[EnterWord.Length];
-            return LetterList;
+            string[] wordArray = {"Apple", "Banana", "Orange"};
+
+            Random random = new Random();
+            int randomNo = random.Next(3);
+            string hangmanWord = wordArray[randomNo];
+
+            string underscoredWord = new String('_', hangmanWord.Length);
+            Console.WriteLine("Guess the word:\n" + underscoredWord);
+
+            bool typo = true;
+            string guessedWord = "";
+
+            //User enters his guess
+            while (typo == true)
+            {
+                Console.WriteLine("Please enter your guess:");
+                guessedWord = Console.ReadLine().Trim();
+
+                if (guessedWord.Length == 1)
+                {
+                    typo = false;
+                }
+                else if (guessedWord.Length < 1)
+                {
+                    Console.WriteLine("You did not enter anything");
+                }
+                else
+                {
+                    Console.WriteLine("You entered more than one character");
+                }
+            }
         }
-        
+
         public static int[] CheckGuess(char a,string b)
         {
             int[] positions = new int[b.Length];
