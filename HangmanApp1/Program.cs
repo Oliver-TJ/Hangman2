@@ -6,6 +6,41 @@ namespace HangmanApp1
 {
     public static class Hangman
     {
+        static void enteringWord() // Ben's part
+        {
+            string[] wordArray = {"Apple", "Banana", "Orange"};
+
+            Random random = new Random();
+            int randomNo = random.Next(3);
+            string hangmanWord = wordArray[randomNo];
+
+            string underscoredWord = new String('_', hangmanWord.Length);
+            Console.WriteLine("Guess the word:\n" + underscoredWord);
+
+            bool typo = true;
+            string guessedWord = "";
+
+            //User enters his guess
+            while (typo == true)
+            {
+                Console.WriteLine("Please enter your guess:");
+                guessedWord = Console.ReadLine().Trim();
+
+                if (guessedWord.Length == 1)
+                {
+                    typo = false;
+                }
+                else if (guessedWord.Length < 1)
+                {
+                    Console.WriteLine("You did not enter anything");
+                }
+                else
+                {
+                    Console.WriteLine("You entered more than one character");
+                }
+            }
+        }
+
 
         public static int[] CheckGuess(char a,string b)
         {
@@ -73,75 +108,7 @@ namespace HangmanApp1
 
         public static void DrawGame(char[] letters, string SecretWord, int hangmanstage)
         {
-            switch (hangmanstage)
-            {
-                case 1:
-                    Console.WriteLine("  +---+\n" +
-                                      "  |   |\n" +
-                                      "      |\n" +
-                                      "      |\n" +
-                                      "      |\n" +
-                                      "      |\n" +
-                                      "=========''', '''");
-                    break;
-                case 2:
-                    Console.WriteLine("  +---+\n" +
-                                      "  |   |\n" +
-                                      "  0   |\n" +
-                                      "      |\n" +
-                                      "      |\n" +
-                                      "      |\n" +
-                                      "=========''', '''");
-                    break;
-                case 3:
-                    Console.WriteLine("  +---+\n" +
-                                      "  |   |\n" +
-                                      "  0   |\n" +
-                                      "  |   |\n" +
-                                      "      |\n" +
-                                      "      |\n" +
-                                      "=========''', '''");
-                    break;
-                case 4:
-                    Console.WriteLine("  +---+\n" +
-                                      "  |   |\n" +
-                                      "  0   |\n" +
-                                      " /|   |\n" +
-                                      "      |\n" +
-                                      "      |\n" +
-                                      "=========''', '''");
-                    break;
-                case 5:
-                    Console.WriteLine("  +---+\n" +
-                                      "  |   |\n" +
-                                      "  0   |\n" +
-                                      " /|\\  |\n" +
-                                      "      |\n" +
-                                      "      |\n" +
-                                      "=========''', '''");
-                    break;
-                case 6:
-                    Console.WriteLine("  +---+\n" +
-                                      "  |   |\n" +
-                                      "  0   |\n" +
-                                      " /|\\  |\n" +
-                                      " /    |\n" +
-                                      "      |\n" +
-                                      "=========''', '''");
-                    break;
-                case 7:
-                    Console.WriteLine("  +---+\n" +
-                                      "  |   |\n" +
-                                      "  0   |\n" +
-                                      " /|\\  |\n" +
-                                      " / \\  |\n" +
-                                      "      |\n" +
-                                      "=========''', '''");
-                    break;
-                default:
-                    Console.WriteLine("Default case");
-                    break;
-            }
+            Console.WriteLine("Didnt do nothin");
         }
 
         public static void GameLoop()
