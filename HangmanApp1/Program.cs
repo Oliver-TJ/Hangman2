@@ -82,7 +82,7 @@ namespace HangmanApp1
            //Console.WriteLine(word);
            int counter = word.Length;
            int hangmanprogress = 0;
-           while (counter > 0 || hangmanprogress > 6)
+           while (counter > 0 && hangmanprogress < 6)
            {
                
                Console.WriteLine("Enter your guess: ");
@@ -119,6 +119,16 @@ namespace HangmanApp1
                    Console.WriteLine("You guessed incorrectly");
                }
                */
+           }
+
+           if (hangmanprogress == 6)
+           {
+
+               Console.WriteLine("Contgrats You Lose!!!");
+           }
+           else
+           {
+               Console.WriteLine("Congrats You Win!!");
            }
         }
 
