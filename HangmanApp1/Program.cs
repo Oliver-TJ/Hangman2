@@ -6,15 +6,7 @@ namespace HangmanApp1
 {
     public static class Hangman
     {
-        public static Array WordCreator()
-        {
-            // input
-            Console.WriteLine("Enter the word you want to guess");
-            string EnterWord = Console.ReadLine();
-            string[] LetterList = new string[EnterWord.Length];
-            return LetterList;
-        }
-        
+
         public static int[] CheckGuess(char a,string b)
         {
             int[] positions = new int[b.Length];
@@ -79,9 +71,77 @@ namespace HangmanApp1
             return Console.ReadLine();
         }
 
-        public static void DrawGame()
+        public static void DrawGame(char[] letters, string SecretWord, int hangmanstage)
         {
-            Console.WriteLine("Didnt do nothin");
+            switch (hangmanstage)
+            {
+                case 1:
+                    Console.WriteLine("  +---+\n" +
+                                      "  |   |\n" +
+                                      "      |\n" +
+                                      "      |\n" +
+                                      "      |\n" +
+                                      "      |\n" +
+                                      "=========''', '''");
+                    break;
+                case 2:
+                    Console.WriteLine("  +---+\n" +
+                                      "  |   |\n" +
+                                      "  0   |\n" +
+                                      "      |\n" +
+                                      "      |\n" +
+                                      "      |\n" +
+                                      "=========''', '''");
+                    break;
+                case 3:
+                    Console.WriteLine("  +---+\n" +
+                                      "  |   |\n" +
+                                      "  0   |\n" +
+                                      "  |   |\n" +
+                                      "      |\n" +
+                                      "      |\n" +
+                                      "=========''', '''");
+                    break;
+                case 4:
+                    Console.WriteLine("  +---+\n" +
+                                      "  |   |\n" +
+                                      "  0   |\n" +
+                                      " /|   |\n" +
+                                      "      |\n" +
+                                      "      |\n" +
+                                      "=========''', '''");
+                    break;
+                case 5:
+                    Console.WriteLine("  +---+\n" +
+                                      "  |   |\n" +
+                                      "  0   |\n" +
+                                      " /|\\  |\n" +
+                                      "      |\n" +
+                                      "      |\n" +
+                                      "=========''', '''");
+                    break;
+                case 6:
+                    Console.WriteLine("  +---+\n" +
+                                      "  |   |\n" +
+                                      "  0   |\n" +
+                                      " /|\\  |\n" +
+                                      " /    |\n" +
+                                      "      |\n" +
+                                      "=========''', '''");
+                    break;
+                case 7:
+                    Console.WriteLine("  +---+\n" +
+                                      "  |   |\n" +
+                                      "  0   |\n" +
+                                      " /|\\  |\n" +
+                                      " / \\  |\n" +
+                                      "      |\n" +
+                                      "=========''', '''");
+                    break;
+                default:
+                    Console.WriteLine("Default case");
+                    break;
+            }
         }
 
         public static void GameLoop()
