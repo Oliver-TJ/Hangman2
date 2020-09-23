@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics.PerformanceData;
+using System.Runtime.InteropServices;
 
 namespace HangmanApp1
 {
@@ -71,23 +72,43 @@ namespace HangmanApp1
 
         public static void DrawGame()
         {
-            
+            Console.WriteLine("Didnt do nothin");
         }
 
         public static void GameLoop()
         {
            string word = WordEntry();
+           //DrawGame(int[], word;
            //Console.WriteLine(word);
            int counter = word.Length;
-           while (counter > 0)
+           int hangmanprogress = 0;
+           while (counter > 0 || hangmanprogress > 6)
            {
+               
                Console.WriteLine("Enter your guess: ");
                char guess = Convert.ToChar(Console.ReadLine());
                int[] guessPositions = CheckGuess(guess, word);
+               int amount = 0;
                for (int i = 0; i < (word.Length); i++)
                {
-                   Console.WriteLine(guessPositions[i]);
+                   if (guessPositions[i] == 1)
+                   {
+                       amount++;
+                   }
+                   //Console.WriteLine(guessPositions[i]);
                }
+               counter -= amount;
+               if (amount > 0)
+               {
+                   Console.WriteLine("Good job you guessed correct!!!");
+               }
+               else
+               {
+                   Console.WriteLine("Unlucky you failiure!!!!");
+                   hangmanprogress++;
+               }
+
+               //DrawGame(guessPositions,word);
                Console.WriteLine(Convert.ToString(CheckGuess(guess, word)));
                /*if (Contains(guess, word) == -1)
                {
