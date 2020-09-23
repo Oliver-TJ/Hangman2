@@ -6,6 +6,15 @@ namespace HangmanApp1
 {
     public static class Hangman
     {
+        public static Array WordCreator()
+        {
+            // input
+            Console.WriteLine("Enter the word you want to guess");
+            string EnterWord = Console.ReadLine();
+            string[] LetterList = new string[EnterWord.Length];
+            return LetterList;
+        }
+        
         public static int[] CheckGuess(char a,string b)
         {
             int[] positions = new int[b.Length];
@@ -82,7 +91,7 @@ namespace HangmanApp1
            //Console.WriteLine(word);
            int counter = word.Length;
            int hangmanprogress = 0;
-           while (counter > 0 && hangmanprogress < 6)
+           while (counter > 0 || hangmanprogress > 6)
            {
                
                Console.WriteLine("Enter your guess: ");
@@ -119,16 +128,6 @@ namespace HangmanApp1
                    Console.WriteLine("You guessed incorrectly");
                }
                */
-           }
-
-           if (hangmanprogress == 6)
-           {
-
-               Console.WriteLine("Contgrats You Lose!!!");
-           }
-           else
-           {
-               Console.WriteLine("Congrats You Win!!");
            }
         }
 
