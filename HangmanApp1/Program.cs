@@ -103,15 +103,7 @@ namespace HangmanApp1
                 "                        Y8b d88P\n" +
                 "                          Y88P \n" +
                 "By Oliver Blomfied, Oliver TJ, and Ben Wong");
-                "888\n" +
-                "88888b.   8888b.  88888b.  .d88b.  88888b.d88b.   8888b.  88888b.\n" +
-                "888  88b     88b 888  88b d88P 88b 888  888  88b      88b 888  88b \n" +
-                "888  888 .d88888 8888  88 8888  88 8888  888  888. d88888 8888  888 \n" +
-                "888  888 888  88 8888  888 Y88b 88 8888  888  888 888  88 8888  888\n" +
-                "888  888  Y88888 8888  888   Y8888 8888  888  888  Y88888 8888  888 \n" +
-                "                              888\n" +
-                "                         Y8b d88P\n" +
-                "                           Y88P ");
+                
             Console.WriteLine("Enter the word you would like someone to guess: ");
             return Console.ReadLine();
         }
