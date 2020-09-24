@@ -93,7 +93,7 @@ namespace HangmanApp1
                 "   `-----'\n" +
                 "888\n" +
                 "888\n" +
-                "888\n" +
+                "888      source code: https://github.com/gtfyds/Hangman2.git\n" +
                 "88888b.  8888b. 88888b.  .d88b. 88888b.d88b.  8888b. 88888b.\n" +
                 "888  88b     88b888  88bd88P 88b888  888  88b     88b888  88b \n" +
                 "888  888.d888888888  888888  888888  888  888.d888888888  888 \n" +
@@ -101,7 +101,8 @@ namespace HangmanApp1
                 "888  888 Y888888888  888  Y88888888  888  888 Y888888888  888 \n" +
                 "                             888\n" +
                 "                        Y8b d88P\n" +
-                "                          Y88P ");
+                "                          Y88P \n" +
+                "By Oliver Blomfied, Oliver TJ, and Ben Wong");
             Console.WriteLine("Enter the word you would like someone to guess: ");
             return Console.ReadLine();
         }
@@ -211,18 +212,9 @@ namespace HangmanApp1
                    Console.WriteLine("Unlucky you failiure!!!!");
                    hangmanprogress++;
                }
-
-               //DrawGame(guessPositions,word);
+               
                Console.WriteLine(Convert.ToString(CheckGuess(guess, word)));
-               /*if (Contains(guess, word) == -1)
-               {
-                   Console.WriteLine("You guessed the "+(ret+1)+" Character correctly");
-               }
-               else if (ret == -1)
-               {
-                   Console.WriteLine("You guessed incorrectly");
-               }
-               */
+               
            }
         }
 
