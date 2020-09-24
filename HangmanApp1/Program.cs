@@ -208,7 +208,7 @@ namespace HangmanApp1
                }
                else
                {
-                   Console.WriteLine("Unlucky you failiure!!!!");
+                   Console.WriteLine("Unlucky you idiot!!!!");
                    hangmanprogress++;
                }
 
