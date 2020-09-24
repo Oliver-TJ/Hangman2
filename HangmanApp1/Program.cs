@@ -8,7 +8,7 @@ namespace HangmanApp1
     {
         static void enteringWord() // Ben's part
         {
-            string[] wordArray = {"Apple", "Banana", "Orange"};
+            string[] wordArray = {"Apple", "Banana", "Orange","Nice"};
 
             Random random = new Random();
             int randomNo = random.Next(3);
