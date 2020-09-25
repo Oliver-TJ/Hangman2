@@ -179,6 +179,22 @@ namespace HangmanApp1
                     Console.WriteLine("Default case");
                     break;
             }
+
+            string output = "";
+            for (int i = 0; i < letters.Length; i++)
+            {
+                if (letters[i] == Convert.ToChar("#"))
+                {
+                    output += "_";
+                }
+                else
+                {
+                    output += letters[i];
+                }
+                    
+            }
+            
+            Console.WriteLine(output);
         }
 
         public static void GameLoop()
@@ -187,8 +203,13 @@ namespace HangmanApp1
            //DrawGame(int[], word;
            //Console.WriteLine(word);
            int counter = word.Length;
-           int hangmanprogress = 0;
-           while (counter > 0 || hangmanprogress > 6)
+           int hangmanprogress = 1;
+           char[] characters = new char[word.Length];
+           for(int i = 0; i < characters.Length; i++)
+           {
+               characters[i] = Convert.ToChar("#");
+           }
+           while (counter > 0 && hangmanprogress < 7)
            {
                
                Console.WriteLine("Enter your guess: ");
@@ -200,6 +221,7 @@ namespace HangmanApp1
                    if (guessPositions[i] == 1)
                    {
                        amount++;
+                       characters[i] = guess;
                    }
                    //Console.WriteLine(guessPositions[i]);
                }
@@ -214,6 +236,7 @@ namespace HangmanApp1
                    hangmanprogress++;
                }
 
+               DrawGame(characters, word, hangmanprogress);
                //DrawGame(guessPositions,word);
                Console.WriteLine(Convert.ToString(CheckGuess(guess, word)));
                /*if (Contains(guess, word) == -1)
@@ -226,6 +249,15 @@ namespace HangmanApp1
                }
                */
            }
+
+           if (hangmanprogress == 7)
+           {
+               Console.WriteLine("You lose!!!!!!");
+           }
+           else
+           {
+               Console.WriteLine("Congrats you win!!!");
+           }
         }
 
         public static void Main(string[] args)
@@ -233,20 +265,7 @@ namespace HangmanApp1
             // Ben           - enter the words and allow user to choose
             // Ollie TJ      - function that loops through the word to see where letters are
             // Ollie Blom    - Main while loop
-            string letterChoice = "n";
-            string wordActual = "Beginning";
             GameLoop();
-            /* int ret;
-            ret = Contains(letterChoice, wordActual);
-            if (ret != -1)
-            {
-                Console.WriteLine("You guessed the "+(ret+1)+" Character correctly");
-            }
-            else if (ret == -1)
-            {
-                Console.WriteLine("You guessed incorrectly");
-            }
-            */
         }
     }
 }
